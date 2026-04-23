@@ -10,35 +10,18 @@ namespace Klinika
     {
         static void Main(string[] args)
         {
-            //Property usulu 
             Xeste x1 = new Xeste(1, "Anar", "Quliyev", 35);
-            x1.Boy = 178;
-            x1.Ceki = 82;
-            x1.QanGrupu = "A+";
-            x1.Sigortali = true;
+            x1.Boy = 178; x1.Ceki = 82; x1.QanGrupu = "A+"; x1.Sigortali = true;
+
+            Hekim h1 = new Hekim(101, "Nicat", "Həsənov", 45, "Kardioloq");
+            h1.StajIl = 18; h1.Maas = 3500;
+
+            TibbBacisi t1 = new TibbBacisi(201, "Leyla", "Əliyeva", 28, "Cərrahiyyə");
+            t1.Novbet = "Gecə";
 
             x1.MelumatGoster();
-
-            // Encapsulation işdə:
-            // x1._yas = -5;     ← XƏTA! private-dir
-            // x1.Yas  = -5;     ← Exception: "Yaş 0-150 arasında olmalıdır!"
-            // x1.QanGrupu = "X+"; ← Exception: "Yanlış qan qrupu!"
-
-            //Kohne usul (get/set metodlari ile)
-            Xeste_ x = new Xeste_(1, "Anar", 35);
-
-            // Oxumaq üçün → Get metodunu çağırırıq
-            Console.WriteLine(x.GetAd());    // Anar
-            Console.WriteLine(x.GetYas());   // 35
-
-            // Yazmaq üçün → Set metodunu çağırırıq
-            x.SetAd("Nicat");
-            x.SetYas(28);
-            x.SetQanGrupu("A+");
-            x.SetQanGrupu("X+");   // Xəta: Yanlış qan qrupu!
-            x.SetYas(999);         // Xəta: Yaş 0-150 arasında olmalıdır!
-
-            x.MelumatGoster();
+            h1.MelumatGoster();
+            t1.MelumatGoster();
 
         }
     }
